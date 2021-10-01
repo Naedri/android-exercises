@@ -11,6 +11,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
             android:name=".LibraryActivity"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
