@@ -15,7 +15,9 @@ class Step0Fragment : Fragment() {
         private const val STEP_0 = "This is step 0"
     }
 
-    private var textView: TextView? = null
+    private lateinit var textView: TextView
+    private lateinit var nextButton: Button
+
     private var listener: OnNextStep0Listener? = null
 
     override fun onAttach(context: Context) {
@@ -26,13 +28,8 @@ class Step0Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_step0, container, false)
 
-        // TODO find TextView and set text
-
-        // TODO find Button and set listener
-        val nextButton: Button
-        nextButton.setOnClickListener {
-            // TODO call listener
-        }
+        // TODO find TextView
+        // TODO find Button
 
         return view
     }
@@ -41,6 +38,11 @@ class Step0Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // TODO setText(STEP_0)
+
+        // TODO setButtonListener
+        nextButton.setOnClickListener {
+            // TODO call listener
+        }
     }
 
     interface OnNextStep0Listener// TODO add onNext() method

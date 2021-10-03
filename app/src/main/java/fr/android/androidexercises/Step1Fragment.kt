@@ -3,5 +3,5 @@ package fr.android.androidexercises
 import androidx.fragment.app.Fragment
 
 class Step1Fragment : Fragment() {
-    // TODO Override onCreateViewMethod
+    // TODO Override onCreateView method
 }
