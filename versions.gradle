@@ -13,7 +13,8 @@ ext.versions = [
         coroutines_version      : "1.4.1",
         constraintlayout_version: "2.0.4",
         timber_version          : "4.7.1",
-        mockk_version           : "1.9.3",
+        mockk_version           : "1.13.2",
         kluent_version          : "1.49",
+        mockito_version         : "1.13.2",
         robolectric_version     : "4.3"
 ]

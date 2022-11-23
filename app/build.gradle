@@ -4,6 +4,7 @@ apply from: '../versions.gradle'
 
 android {
     compileSdkVersion versions.compile_sdk_version
+    namespace 'fr.android.androidexercises'
 
     defaultConfig {
         applicationId "fr.android.androidexercises"
@@ -11,8 +12,15 @@ android {
         targetSdkVersion versions.target_sdk_version
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments clearPackageData: 'true'
+    }
 
-        // TODO add testInstrumentationRunner
+    testOptions {
+        execution 'ANDROIDX_TEST_ORCHESTRATOR'
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 
     buildTypes {
@@ -30,9 +38,18 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE.md'
+        exclude 'META-INF/LICENSE-notice.md'
+    }
 }
 
 dependencies {
+    implementation 'androidx.test.ext:junit-ktx:1.1.4'
     testImplementation "junit:junit:$versions.junit_version"
     implementation(
             "androidx.appcompat:appcompat:$versions.appcompat_version",
@@ -40,13 +57,18 @@ dependencies {
             "androidx.constraintlayout:constraintlayout:$versions.constraintlayout_version",
             "com.jakewharton.timber:timber:$versions.timber_version",
             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            // TODO MockK
-
-            // TODO AssertJ + AssertJ Android
-
-            // TODO Espresso
     )
+    testImplementation "io.mockk:mockk:$versions.mockito_version"
+    androidTestImplementation "io.mockk:mockk-android:$versions.mockito_version"
+    testImplementation 'com.squareup.assertj:assertj-android:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.5.1'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
+    androidTestUtil 'androidx.test:orchestrator:1.4.2'
+    testImplementation 'org.robolectric:robolectric:4.8'
 }
+
+
 
 repositories {
     mavenCentral()
