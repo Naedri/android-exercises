@@ -11,6 +11,10 @@ import android.widget.Toast
 
 class LibraryActivity : AppCompatActivity() {
 
+    companion object {
+        const val requestCode = 1
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
@@ -28,6 +32,8 @@ class LibraryActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         // TODO get back book name
+        val intent = Intent(this, BookActivity::class.java)
+        this.startActivity(intent, requestCode)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
