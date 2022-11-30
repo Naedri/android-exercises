@@ -1,5 +1,6 @@
 package fr.android.androidexercises
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -20,7 +21,9 @@ class LibraryActivity : AppCompatActivity() {
 
         openButton.setOnClickListener {
             // Replace with startActivity() to start BookActivity
-            Toast.makeText(this@LibraryActivity, R.string.toast_todo, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@LibraryActivity, R.string.toast_todo, Toast.LENGTH_SHORT).show()
+            val mainIntent = Intent(this@LibraryActivity, BookActivity::class.java) // activité donnante, activité cible
+            startActivity(mainIntent)
         }
     }
 
