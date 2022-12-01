@@ -12,5 +12,7 @@ ext.versions = [
         rxandroid_version       : "2.1.1",
         coroutines_version      : "1.4.1",
         constraintlayout_version: "2.0.4",
-        timber_version          : "4.7.1"
+        timber_version          : "4.7.1",
+        retrofit2_gson_version  : "2.9.0",
+        retrofit2_version       : "2.9.0"
 ]
