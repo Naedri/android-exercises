@@ -17,7 +17,8 @@ class LibraryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
 
-        val books = books
+        val books = books;
+        val lv =
 
         // TODO findViewById() and setAdapter()
     }
