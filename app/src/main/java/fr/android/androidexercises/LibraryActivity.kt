@@ -9,10 +9,19 @@ class LibraryActivity : AppCompatActivity(), Step0Fragment.OnNextStep0Listener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
 
-        // TODO replace Step0Fragment in containerFrameLayout
-
+        // replace Step0Fragment in containerFrameLayout
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.containerFrameLayout, Step0Fragment() )
+            .commit()
     }
 
-    // TODO implement onNext() from Step0Fragment.OnNextStep0Listener
-
+    // implement onNext() from Step0Fragment.OnNextStep0Listener
+    override fun onNext(){
+        supportFragmentManager.beginTransaction()
+            //.replace(R.id.containerFrameLayout, Step1Fragment(), "Step2Fragment")
+            .replace(R.id.containerFrameLayout, Step1Fragment())
+            //.addToBackStack("Step1Fragment")
+            .addToBackStack(Step1Fragment::class.java.name)
+            .commit()
+    }
 }
