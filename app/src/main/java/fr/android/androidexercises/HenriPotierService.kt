@@ -7,6 +7,10 @@ interface HenriPotierService {
     // Method GET books which return a List<Book>
     @GET("books")
     fun listBooks(): Call<List<Book>>
+
+    //Method async
+    @GET("books")
+    fun listBooksAsync(): Call<List<Book>>
 }
 
 

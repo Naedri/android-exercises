@@ -13,6 +13,11 @@ import timber.log.Timber
 
 class LibraryActivity : AppCompatActivity() {
 
+    suspend fun loadAsync(service:HenriPotierService){
+        val books = service.listBooksAsync()
+        println(books)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_library)
