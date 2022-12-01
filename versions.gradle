@@ -15,5 +15,14 @@ ext.versions = [
         timber_version          : "4.7.1",
         mockk_version           : "1.9.3",
         kluent_version          : "1.49",
-        robolectric_version     : "4.3"
+        robolectric_version     : "4.3",
+
+        test_runner_version     : "1.5.1",
+        test_orchest_version    : "1.4.2",
+
+        mockk_version           : "1.13.3",
+        assertj_version         : "3.6.1",
+        expresso_version        : "3.4.0",
+        test_version            : "1.4.0",
+
 ]

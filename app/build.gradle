@@ -12,7 +12,11 @@ android {
         versionCode 1
         versionName "1.0"
 
-        // TODO add testInstrumentationRunner
+        // add testInstrumentationRunner
+        dependencies {
+            androidTestImplementation "androidx.test:runner:$versions.test_runner_version"
+            androidTestUtil "androidx.test:orchestrator:$versions.test_orchest_version"
+        }
     }
 
     buildTypes {
@@ -33,18 +37,24 @@ android {
 }
 
 dependencies {
-    testImplementation "junit:junit:$versions.junit_version"
+    testImplementation (
+            "junit:junit:$versions.junit_version",
+            // MockK
+            "io.mockk:mockk-agent:$versions.mockk_version",
+            "io.mockk:mockk-android:$versions.mockk_version",
+            // AssertJ + AssertJ Android
+            "org.assertj:assertj-core:$versions.assertj_version",
+            // Espresso
+            "androidx.test.espresso:espresso-core:$versions.expresso_version",
+            "androidx.test:runner:$versions.test_version",
+            "androidx.test:rules:$versions.test_version",
+    )
     implementation(
             "androidx.appcompat:appcompat:$versions.appcompat_version",
             "com.google.android.material:material:$versions.material_version",
             "androidx.constraintlayout:constraintlayout:$versions.constraintlayout_version",
             "com.jakewharton.timber:timber:$versions.timber_version",
             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
-            // TODO MockK
-
-            // TODO AssertJ + AssertJ Android
-
-            // TODO Espresso
     )
 }
 

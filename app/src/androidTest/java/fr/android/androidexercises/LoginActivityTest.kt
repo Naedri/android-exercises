@@ -4,4 +4,5 @@ package fr.android.androidexercises
 //@LargeTest
 class LoginActivityTest {
     // TODO test login activity with Espresso
+
 }
